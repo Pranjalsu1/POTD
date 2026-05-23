@@ -1,0 +1,16 @@
+ bool check(vector<int>& nums) {
+        int n = nums.size();
+        int j = 1;
+        for(int i=0;i<n-1;i++){
+            if(nums[j]<nums[i]){
+                int k = j+1;
+                for(int l=j;l<n-1;l++){
+                    if(nums[k]<nums[l]) return false;
+                    k++;
+                }
+                if(nums[0]<nums[n-1]) return false;
+            }
+            j++;
+        }
+        return true;
+  }
